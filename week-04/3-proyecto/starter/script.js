@@ -1,22 +1,23 @@
 // ============================================
 // PROYECTO SEMANA 04: Generador de Mensajes
+// E-LEARNING - Curso de Inglés
 // ============================================
 
 // ============================================
 // SECCIÓN 1: Datos del dominio
 // ============================================
 
-const DOMAIN_NAME = "Biblioteca de Videojuegos";
+const DOMAIN_NAME = "E-Learning";
 
-const rawEntityName = "  The Legend of Zelda  ";
+const rawEntityName = "  Curso de Inglés Básico  ";
 
-const entityCategory = "Aventura";
+const entityCategory = "Idiomas - Principiante";
 
-const entityCode = "VID-001";
+const entityCode = "ENG-001";
 
-const entityDescription = "Videojuego icónico del dominio de aventuras que combina exploración, puzzles y combate.";
+const entityDescription = "Curso de inglés enfocado en gramática básica, vocabulario y conversación inicial.";
 
-const mainValue = 95;
+const mainValue = 40; // horas del curso
 
 const isActive = true;
 
@@ -40,7 +41,7 @@ const codePrefix = entityCode.slice(0, 3);
 
 const hasValidPrefix = entityCode.startsWith(codePrefix);
 
-const descriptionIsRelevant = entityDescription.includes("aventuras");
+const descriptionIsRelevant = entityDescription.includes("inglés");
 
 const hasValidSuffix = entityCode.endsWith("001");
 
@@ -54,13 +55,13 @@ const subSeparator = "-".repeat(45);
 
 const mainCard = `
 ${separator}
-  ${DOMAIN_NAME.toUpperCase()} — FICHA DEL VIDEOJUEGO
+  ${DOMAIN_NAME.toUpperCase()} — FICHA DEL CURSO
 ${separator}
 Nombre:      ${entityNameUpper}
 Categoría:   ${entityCategory}
 Código:      ${entityCode}
 Prefijo:     ${codePrefix}
-Puntuación:  ${mainValue}
+Duración:    ${mainValue} horas
 Estado:      ${isActive ? "Disponible" : "No disponible"}
 
 ${subSeparator}
@@ -79,7 +80,7 @@ console.log(mainCard);
 console.log("--- Validaciones ---");
 
 console.log(`¿Código empieza con '${codePrefix}'?: ${hasValidPrefix}`);
-console.log(`¿Descripción contiene 'aventuras'?: ${descriptionIsRelevant}`);
+console.log(`¿Descripción contiene 'inglés'?: ${descriptionIsRelevant}`);
 console.log(`¿Código termina con '001'?: ${hasValidSuffix}`);
 
 console.log("");
@@ -91,7 +92,7 @@ console.log("");
 
 console.log("--- Notificación ---");
 
-const notification = `🎮 Nuevo videojuego agregado: ${entityName} (${entityCode})`;
+const notification = `📘 Nuevo curso agregado: ${entityName} (${entityCode})`;
 
 console.log(notification);
 console.log("");
